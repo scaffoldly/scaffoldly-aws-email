@@ -43,7 +43,7 @@ module "email" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_stage"></a> [stage](#module\_stage) | scaffoldly/stage-email/aws | 0.15.1 |
+| <a name="module_stage"></a> [stage](#module\_stage) | scaffoldly/stage-email/aws | 0.15.2 |
 
 ## Resources
 
