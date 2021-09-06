@@ -30,20 +30,19 @@ module "email" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.15 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.33.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0, < 1.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.33.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.57.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_stage"></a> [stage](#module\_stage) | scaffoldly/stage-email/aws | 0.15.4 |
+| <a name="module_stage"></a> [stage](#module\_stage) | scaffoldly/stage-email/aws | 1.0.1 |
 
 ## Resources
 
@@ -57,7 +56,8 @@ module "email" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_root_email"></a> [root\_email](#input\_root\_email) | The AWS account's email address | `string` | n/a | yes |
-| <a name="input_stage_domains"></a> [stage\_domains](#input\_stage\_domains) | The stage domain config (the output from the terraform-aws-dns module) | <pre>map(<br>    object({<br>      domain                = string<br>      subdomain             = string<br>      subdomain_suffix      = string<br>      serverless_api_domain = string<br>      platform_domains      = map(string)<br>      certificate_arn       = string<br>      dns_provider          = string<br>      dns_domain_id         = string<br>      stage_env_vars        = map(string)<br>    })<br>  )</pre> | n/a | yes |
+| <a name="input_stages"></a> [stages](#input\_stages) | Output var.stages from terraform-aws-bootstrap | <pre>map(<br>    object({<br>      domain           = string<br>      subdomain_suffix = optional(string)<br>      env_vars         = optional(map(string))<br>    })<br>  )</pre> | n/a | yes |
+| <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain for email sending | `string` | n/a | yes |
 
 ## Outputs
 
