@@ -5,11 +5,21 @@ terraform {
   required_providers {
     aws = {
       source                = "hashicorp/aws"
-      configuration_aliases = [aws.dns]
+      configuration_aliases = [aws.root]
     }
   }
 }
 
 provider "aws" {
-  alias = "dns"
+  # Used for DNS and Role Assumption, which are global services, so us-east-1 is hard-coded
+  alias  = "root"
+  region = "us-east-1"
+}
+
+provider "aws" {
+  region = var.aws_region
+
+  assume_role {
+    role_arn = "arn:aws:iam::${var.account_id}:role/${var.root_email}"
+  }
 }

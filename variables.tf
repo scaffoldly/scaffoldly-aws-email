@@ -1,3 +1,14 @@
+variable "aws_region" {
+  type        = string
+  description = "The AWS region to use"
+  default     = "us-east-1"
+}
+
+variable "account_id" {
+  type        = string
+  description = "The AWS account ID"
+}
+
 variable "root_email" {
   type        = string
   description = "The AWS account's email address"
