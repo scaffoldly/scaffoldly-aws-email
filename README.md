@@ -56,9 +56,9 @@ module "email" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_account_id"></a> [account\_id](#input\_account\_id) | The AWS account ID | `string` | n/a | yes |
+| <a name="input_api_gateway_stages"></a> [api\_gateway\_stages](#input\_api\_gateway\_stages) | Output api\_gateway\_stages from terraform-aws-bootstrap | <pre>map(<br>    object({<br>      stage_domain     = string<br>      subdomain_suffix = string<br>      zone_id          = string<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to use | `string` | `"us-east-1"` | no |
 | <a name="input_root_email"></a> [root\_email](#input\_root\_email) | The AWS account's email address | `string` | n/a | yes |
-| <a name="input_stages"></a> [stages](#input\_stages) | Output api\_gateway\_stages from terraform-aws-bootstrap | <pre>map(<br>    object({<br>      stage_domain     = string<br>      subdomain_suffix = string<br>      zone_id          = string<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain for email sending | `string` | n/a | yes |
 
 ## Outputs
