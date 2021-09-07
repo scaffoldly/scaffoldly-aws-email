@@ -10,13 +10,14 @@ module "stage" {
   for_each = var.stages
 
   source  = "scaffoldly/stage-email/aws"
-  version = "1.0.3"
+  version = "1.0.4"
 
   stage            = each.key
   root_email       = var.root_email
-  domain           = each.value.domain
+  zone_id          = each.value.zone_id
+  domain           = each.value.stage_domain
   subdomain        = var.subdomain
-  subdomain_suffix = each.value.subdomain_suffix != null ? each.value.subdomain_suffix : ""
+  subdomain_suffix = each.value.subdomain_suffix
   rule_set_name    = aws_ses_receipt_rule_set.primary.rule_set_name
 
   providers = {

@@ -22,12 +22,12 @@ variable "subdomain" {
 variable "stages" {
   type = map(
     object({
-      domain           = string
-      subdomain_suffix = optional(string)
-      env_vars         = optional(map(string))
+      stage_domain     = string
+      subdomain_suffix = string
+      zone_id          = string
     })
   )
 
-  description = "Output var.stages from terraform-aws-bootstrap"
+  description = "Output api_gateway_stages from terraform-aws-bootstrap"
 }
 
