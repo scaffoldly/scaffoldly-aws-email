@@ -55,6 +55,8 @@ module "email" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_account_id"></a> [account\_id](#input\_account\_id) | The AWS account ID | `string` | n/a | yes |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to use | `string` | `"us-east-1"` | no |
 | <a name="input_root_email"></a> [root\_email](#input\_root\_email) | The AWS account's email address | `string` | n/a | yes |
 | <a name="input_stages"></a> [stages](#input\_stages) | Output var.stages from terraform-aws-bootstrap | <pre>map(<br>    object({<br>      domain           = string<br>      subdomain_suffix = optional(string)<br>      env_vars         = optional(map(string))<br>    })<br>  )</pre> | n/a | yes |
 | <a name="input_subdomain"></a> [subdomain](#input\_subdomain) | The subdomain for email sending | `string` | n/a | yes |
