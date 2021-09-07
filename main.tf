@@ -20,6 +20,6 @@ module "stage" {
   rule_set_name    = aws_ses_receipt_rule_set.primary.rule_set_name
 
   providers = {
-    aws.dns = aws.root
+    aws.dns = aws.dns
   }
 }
