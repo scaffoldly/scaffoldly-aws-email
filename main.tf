@@ -10,7 +10,7 @@ module "stage" {
   for_each = var.stages
 
   source  = "scaffoldly/stage-email/aws"
-  version = "1.0.2"
+  version = "1.0.3"
 
   stage            = each.key
   root_email       = var.root_email
