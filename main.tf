@@ -7,7 +7,7 @@ resource "aws_ses_active_receipt_rule_set" "primary" {
 }
 
 module "stage" {
-  for_each = var.stages
+  for_each = var.api_gateway_stages
 
   source  = "scaffoldly/stage-email/aws"
   version = "1.0.4"

@@ -19,7 +19,7 @@ variable "subdomain" {
   description = "The subdomain for email sending"
 }
 
-variable "stages" {
+variable "api_gateway_stages" {
   type = map(
     object({
       stage_domain     = string
