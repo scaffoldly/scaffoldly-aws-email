@@ -63,5 +63,7 @@ module "email" {
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_mail_stages"></a> [mail\_stages](#output\_mail\_stages) | A map of Mail stages, keyed by stage |
 <!-- END_TF_DOCS -->
